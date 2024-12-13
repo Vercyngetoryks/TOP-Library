@@ -34,3 +34,5 @@ function displayBooks() {
     library.appendChild(card);
   });
 }
+
+displayBooks();

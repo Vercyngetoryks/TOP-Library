@@ -26,10 +26,12 @@ function displayBooks() {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-      <h2>${book.title}</h2>
+      <h2 class="header-secondary">${book.title}</h2>
       <p>by</p>
-      <h3>${book.author}</h3>
+      <h3 class="header-tertiary">${book.author}</h3>
+      <br>
       <p>${book.pages} pages</p>
+      <br>
       <p>${book.read}</p>`;
     library.appendChild(card);
   });

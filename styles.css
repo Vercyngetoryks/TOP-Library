@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 p {
   text-wrap: pretty;
@@ -122,6 +122,7 @@ body {
 .card {
   font-family: "Lato", sans-serif;
   background: var(--color-primary);
+  min-width: auto;
   border-radius: 8px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   padding: 1rem;

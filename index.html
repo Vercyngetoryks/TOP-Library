@@ -16,10 +16,40 @@
   <body>
     <header class="header">
       <h1 class="header-primary">My Library</h1>
-      <button class="btn">New Book</button>
     </header>
     <main class="main">
       <div class="container">
+        <button class="btn" id="showDialog">New Book</button>
+        <dialog class="dialog">
+          <form action="#" class="bookInputs">
+            <div class="bookData">
+              <label for="bookTitle">Title:</label>
+              <input type="text" id="bookTitle" name="title" required />
+            </div>
+            <div class="bookData">
+              <label for="bookAuthor">Author:</label>
+              <input type="text" id="bookAuthor" name="author" required />
+            </div>
+            <div class="bookData">
+              <label for="bookPages">Pages:</label>
+              <input type="text" id="bookPages" name="pages" required />
+            </div>
+            <div class="bookData">
+              <label for="bookRead">Have I read it:</label>
+              <input
+                type="text"
+                id="bookRead"
+                name="read"
+                placeholder="yes / no"
+                required
+              />
+            </div>
+            <div class="formBtns">
+              <button type="button" id="cancelBtn"">Cancel</button>
+              <button type="submit">Save</button>
+            </div>
+          </form>
+        </dialog>
         <div class="library"></div>
       </div>
     </main>

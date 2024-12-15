@@ -2,6 +2,10 @@
 
 const myLibrary = [];
 const library = document.querySelector(".library");
+const showButton = document.getElementById("showDialog");
+const cancelButton = document.getElementById("cancelBtn");
+const dialogBox = document.querySelector(".dialog");
+const bookTitleInput = document.getElementById("bookTitle");
 class Book {
   constructor(title, author, pages, read) {
     this.title = title;
@@ -38,3 +42,14 @@ function displayBooks() {
 }
 
 displayBooks();
+
+showButton.addEventListener("click", () => {
+  dialogBox.showModal();
+  setTimeout(() => {
+    bookTitleInput.focus();
+  }, 800);
+});
+
+cancelButton.addEventListener("click", () => {
+  dialogBox.close();
+});

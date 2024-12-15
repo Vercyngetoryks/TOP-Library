@@ -17,6 +17,7 @@
 }
 * {
   margin: 0;
+  padding: 0;
 }
 body {
   line-height: 1.5;
@@ -81,6 +82,7 @@ body {
   margin: 0 auto;
   text-align: center;
   border-radius: 8px;
+  padding: 2rem 0;
 }
 
 .header-primary {
@@ -103,18 +105,6 @@ body {
 
 .btn:hover {
   animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .btn:active {
@@ -154,4 +144,127 @@ body {
 
 .card p {
   font-size: 1.8rem;
+}
+
+.dialog {
+  font-size: 2rem;
+  font-family: "Lato", sans-serif;
+  width: 40rem;
+  min-width: 15rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  background: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.bookData {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bookData input {
+  border-radius: 10px;
+  border: 1px solid var(--color-grey);
+}
+
+.bookData input:focus {
+  outline: 4px solid var(--color-primary);
+  border: none;
+}
+
+.bookData label {
+  justify-self: start;
+}
+
+.formBtns {
+  display: flex;
+  gap: 2rem;
+}
+
+.formBtns button {
+  flex: 1;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+}
+
+.formBtns button:hover {
+  background: var(--color-grey);
+  transform: scale(1.05);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.dialog {
+  animation: fade-out 0.7s ease-out;
+}
+
+.dialog[open] {
+  animation: fade-in 0.7s ease-out;
+}
+
+.dialog[open]::backdrop {
+  animation: backdrop-fade-in 0.7s ease-out forwards;
+}
+
+/* Animation keyframes */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    display: block;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    display: none;
+  }
+}
+
+@keyframes backdrop-fade-in {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+  }
 }

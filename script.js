@@ -31,14 +31,18 @@ function initializeLibrary() {
 function createCard(book) {
   const card = document.createElement("div");
   card.classList.add("card");
+  card.dataset.bookId = myLibrary.indexOf(book);
   card.innerHTML = `
+    <div>
       <h2 class="header-secondary">${book.title}</h2>
       <p>by</p>
       <h3 class="header-tertiary">${book.author}</h3>
       <br>
       <p>${book.pages} pages</p>
       <br>
-      <p>${book.read}</p>`;
+      <p>${book.read}</p>
+    </div>
+    <button class="btnDel">Delete</button>`;
   library.appendChild(card);
 }
 
@@ -67,6 +71,18 @@ form.addEventListener("submit", (e) => {
   renderLastBook();
   dialogBox.close();
   form.reset();
+});
+
+library.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btnDel")) {
+    const card = e.target.closest(".card");
+    const bookId = card.dataset.bookId;
+    card.remove();
+    myLibrary.splice(bookId, 1);
+    document.querySelectorAll(".card").forEach((card, index) => {
+      card.dataset.bookId = index;
+    });
+  }
 });
 
 showButton.addEventListener("click", () => {

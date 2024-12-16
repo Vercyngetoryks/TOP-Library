@@ -68,9 +68,6 @@ body {
   padding: 2rem 0;
 }
 
-.main {
-}
-
 .container {
   width: 80%;
   max-width: 100rem;
@@ -97,9 +94,11 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   background: var(--color-grey);
+  border: none;
   border-radius: 8px;
   padding: 0.5rem 2rem;
   cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   transition: trnsform 0.3s ease;
 }
 
@@ -120,6 +119,10 @@ body {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
   font-family: "Lato", sans-serif;
   background: var(--color-primary);
   min-width: auto;
@@ -143,8 +146,29 @@ body {
   font-size: 2rem;
 }
 
-.card p {
+.card div p {
   font-size: 1.8rem;
+}
+
+.btnDel {
+  font-size: 1.2rem;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--color-grey);
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
+}
+
+.btnDel:hover {
+  background: white;
+  transform: scale(1.05);
+}
+
+.btnDel:active {
+  transform: scale(1);
 }
 
 .dialog {
@@ -224,6 +248,7 @@ body {
   }
   50% {
     transform: scale(1.1);
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
   }
   100% {
     transform: scale(1);

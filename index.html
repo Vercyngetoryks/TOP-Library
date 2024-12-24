@@ -32,17 +32,20 @@
             </div>
             <div class="bookData">
               <label for="bookPages">Pages:</label>
-              <input type="text" id="bookPages" name="pages" required />
+              <input type="number" id="bookPages" name="pages" required />
             </div>
             <div class="bookData">
-              <label for="bookRead">Have I read it:</label>
-              <input
-                type="text"
-                id="bookRead"
-                name="read"
-                placeholder="yes / no"
-                required
-              />
+              <span>Have I read it:</span>
+              <div class="read">
+                <div class="read-option">
+                  <label for="bookRead">Yes</label>
+                  <input type="radio" id="bookRead" name="read" value="yes" checked>
+                </div>
+                <div class="read-option">
+                  <label for="bookNotRead">No</label>
+                  <input type="radio" id="bookNotRead" name="read" value="no">
+                </div>
+              </div>
             </div>
             <div class="formBtns">
               <button type="button" id="cancelBtn"">Cancel</button>

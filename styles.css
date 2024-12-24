@@ -150,25 +150,41 @@ body {
   font-size: 1.8rem;
 }
 
-.btnDel {
+.cardBtns {
+  display: flex;
+  gap: 2rem;
+}
+
+.btnDel,
+.btnRead {
+  flex: 1;
   font-size: 1.2rem;
-  align-self: center;
   padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
   border: none;
   border-radius: 5px;
-  background: var(--color-grey);
+  background: var(--color-secondary);
   cursor: pointer;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   transition: transform 0.2s;
 }
 
-.btnDel:hover {
+.btnDel:hover,
+.btnRead:hover {
   background: white;
   transform: scale(1.05);
 }
 
-.btnDel:active {
+.btnDel:active,
+.btnRead:active {
   transform: scale(1);
+}
+
+.btnCard-icon {
+  width: 24px;
+  height: 24px;
+  fill: white;
 }
 
 .dialog {
@@ -209,7 +225,31 @@ body {
   justify-self: start;
 }
 
+.read {
+  display: flex;
+  justify-content: space-around;
+}
+
+.read-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.read-option label {
+  font-size: 1.6rem;
+}
+
+input[type="radio"] {
+  transform: scale(2);
+}
+
+input[type="radio"]:focus {
+  outline: none;
+}
+
 .formBtns {
+  margin-top: 2rem;
   display: flex;
   gap: 2rem;
 }

@@ -90,22 +90,21 @@ form.addEventListener("submit", (e) => {
 });
 
 library.addEventListener("click", (e) => {
+  const card = e.target.closest(".card");
+  if (!card) return;
+
+  const bookId = card.dataset.bookId;
+  const book = myLibrary[bookId];
+
   if (e.target.classList.contains("btnDel")) {
-    const card = e.target.closest(".card");
-    const bookId = card.dataset.bookId;
     card.remove();
     myLibrary.splice(bookId, 1);
     document.querySelectorAll(".card").forEach((card, index) => {
       card.dataset.bookId = index;
     });
   }
-});
 
-library.addEventListener("click", (e) => {
   if (e.target.classList.contains("btnRead")) {
-    const card = e.target.closest(".card");
-    const bookId = card.dataset.bookId;
-    const book = myLibrary[bookId];
     book.toggleRead();
     card.querySelector("p:last-of-type").textContent = book.read;
   }

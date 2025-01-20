@@ -14,13 +14,13 @@ class Book {
     this.pages = pages;
     this.read = read === "yes" ? "I read it already" : "Not read it yet";
   }
-}
 
-Book.prototype.toggleRead = function () {
-  this.read === "I read it already"
-    ? (this.read = "Not read it yet")
-    : (this.read = "I read it already");
-};
+  toggleRead() {
+    this.read === "I read it already"
+      ? (this.read = "Not read it yet")
+      : (this.read = "I read it already");
+  }
+}
 
 function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(new Book(title, author, pages, read));
